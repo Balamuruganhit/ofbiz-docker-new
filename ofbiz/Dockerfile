@@ -15,8 +15,10 @@ RUN /ofbiz/gradle/init-gradle-wrapper.sh
 EXPOSE 8080
 EXPOSE 8443
 EXPOSE 8009
-
+RUN chmod +x gradlew
 RUN ./gradlew build
+
+
 
 # Configure entity engine to use the localpostgres datasource.
 RUN sed -i 's/datasource-name="localderby"/datasource-name="localpostgres"/g; s#jdbc:postgresql://127.0.0.1/ofbiz#jdbc:postgresql://db/ofbiz#g' /ofbiz/framework/entity/config/entityengine.xml 
