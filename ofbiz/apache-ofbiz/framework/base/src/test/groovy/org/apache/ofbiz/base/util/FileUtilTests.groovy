@@ -30,11 +30,18 @@ class FileUtilTests {
     void zipReadme() {
         String zipFilePath = UtilProperties.getPropertyValue('general', 'http.upload.tmprepository', 'runtime/tmp')
         String zipName = 'README.adoc.zip'
-        String fileName = 'README.adoc'
-        File originalReadme = new File(fileName)
+       String fileName = 'README.adoc'
+File originalReadme = new File(fileName)
 
-        //validate zipStream from README.adoc is not null
-        ByteArrayInputStream zipStream = FileUtil.zipFileStream(originalReadme.newInputStream(), fileName)
+// Validate file existence
+if (!originalReadme.exists()) {
+    throw new FileNotFoundException("File not found: ${originalReadme.absolutePath}")
+}
+
+// Create zipStream and assert it's not null
+ByteArrayInputStream zipStream = FileUtil.zipFileStream(originalReadme.newInputStream(), fileName)
+assert zipStream != null
+println "ZipStream is successfully created"
         assert zipStream
 
         //ensure no zip already exists
