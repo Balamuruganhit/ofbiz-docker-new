@@ -1,3 +1,0 @@
-[submodule "ofbiz/apache-ofbiz/plugins"]
-	path = ofbiz/apache-ofbiz/plugins
-	url = https://github.com/apache/ofbiz-plugins.git
