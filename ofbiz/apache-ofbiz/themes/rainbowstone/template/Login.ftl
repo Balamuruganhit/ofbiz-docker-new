@@ -63,6 +63,7 @@ under the License.
         <br />
         <a href="<@ofbizUrl>forgotPassword</@ofbizUrl>">${uiLabelMap.CommonForgotYourPassword}?</a>
       </form>
+      <h1>hi changes apply</h1>
     </div>
   </div>
 </center>
