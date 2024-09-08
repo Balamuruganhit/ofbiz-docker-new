@@ -1,4 +1,4 @@
-import org.junit.Ignore
+// import org.junit.Ignore
 import org.junit.Test
 
 class FileUtilTests {
@@ -7,7 +7,7 @@ class FileUtilTests {
      * Test FileUtil zipFileStream and unzipFileToFolder methods, using README.adoc
      */
     @Test
-    @Ignore("Skipping due to file not found issue")
+    // @Ignore("Skipping due to file not found issue")
     void zipReadme() {
         String zipFilePath = UtilProperties.getPropertyValue('general', 'http.upload.tmprepository', 'runtime/tmp')
         String zipName = 'README.adoc.zip'
